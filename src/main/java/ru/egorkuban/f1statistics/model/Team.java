@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(schema = "public", name = "team")
 @Setter
 @Getter
 @Accessors(chain = true)
@@ -24,6 +25,6 @@ public class Team {
     @Column(name = "team_chief", nullable = false)
     private String teamChief;
 
-    @OneToMany(mappedBy = "team", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "team")
     private List<Driver> drivers;
 }

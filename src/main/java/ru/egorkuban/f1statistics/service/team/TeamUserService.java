@@ -20,7 +20,7 @@ public class TeamUserService {
 
     public List<DriverResponse> getAllTeamDrivers(Long teamId) {
 
-        return teamRepository.findById(teamId)
+        return teamRepository.findByIdTeam(teamId)
                 .orElseThrow(() -> new IllegalArgumentException("Team with id= " + teamId + "NOT FOUND"))
                 .getDrivers().stream()
                 .map(DriverMapper.INSTANCE::mapToDriverResponse)
@@ -28,7 +28,7 @@ public class TeamUserService {
     }
 
     public List<TeamDto> getAllTeam() {
-        return teamRepository.findAll().stream()
+        return teamRepository.findAllTeams().stream()
                 .map(TeamMapper.INSTANCE::mapToTeamDto)
                 .collect(Collectors.toList());
 

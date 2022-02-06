@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8" />
+    <title>Drivers</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Drivers Team</h1>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>age</th>
+            <th>country</th>
+            <th>number</th>
+            <th>beginIn</th>
+            <th>team</th>
+
+        </tr>
+        <tr th:each ="driver : ${drivers}">
+            <td th:utext="${driver.id}">...</td>
+            <td th:utext="${driver.firstName}">...</td>
+            <td th:utext="${driver.lastName}">...</td>
+            <td th:utext="${driver.age}">...</td>
+            <td th:utext="${driver.country}">...</td>
+            <td th:utext="${driver.number}">...</td>
+            <td th:utext="${driver.beginIn}">...</td>
+            <td th:utext="${driver.team}">...</td>
+
+    </table>
+</div>
+</body>
+</html>

@@ -22,13 +22,14 @@ import java.util.List;
 public class TeamUserController {
     private final TeamUserService teamUserService;
 
-    @GetMapping("/team/{teamId}/drivers/")
-    public ResponseEntity<List<DriverResponse>> getAllTeamDrivers(@PathVariable Long teamId) {
+    @GetMapping("/teams/{teamId}/drivers/")
+    public String getAllTeamDrivers(@PathVariable Long teamId,Model model) {
         {
             final List<DriverResponse> allTeamWithDrivers = teamUserService.getAllTeamDrivers(teamId);
-            return CollectionUtils.isEmpty(allTeamWithDrivers)
-                    ? new ResponseEntity<>(HttpStatus.NOT_FOUND)
-                    : new ResponseEntity<>(allTeamWithDrivers, HttpStatus.OK);
+            model.addAttribute("drivers",allTeamWithDrivers);
+
+            return "players-info";
+
         }
     }
 

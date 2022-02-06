@@ -2,7 +2,6 @@ package ru.egorkuban.f1statistics.mapper.team;
 
 import ru.egorkuban.f1statistics.model.Team;
 import ru.egorkuban.f1statistics.to.dto.team.TeamDto;
-import ru.egorkuban.f1statistics.to.response.TeamResponse;
 
 import java.util.stream.Collectors;
 
