@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Teams</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
 <h1>Teams</h1>
@@ -16,15 +16,13 @@
             <th>COUNTRY</th>
             <th>TEAM CHIEF</th>
             <th>DRIVERS</th>
-            <th>INFO</th>
         </tr>
         <tr th:each ="team : ${teams}">
             <td th:utext="${team.id}">...</td>
             <td th:utext="${team.name}">...</td>
             <td th:utext="${team.country}">...</td>
             <td th:utext="${team.teamChief}">...</td>
-            <td th:utext="${team.drivers}">...</td>
-            <td> <a th:href="@{'teams/' + ${team.id} + '/drivers/'}">INFO</a></td>
+            <td> <a th:href="@{'team/' + ${team.id} + '/drivers/'}" th:utext="${team.drivers}"></a>...</td>
         </tr>
     </table>
 </div>

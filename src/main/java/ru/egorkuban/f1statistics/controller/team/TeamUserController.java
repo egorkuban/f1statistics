@@ -22,7 +22,7 @@ import java.util.List;
 public class TeamUserController {
     private final TeamUserService teamUserService;
 
-    @GetMapping("/teams/{teamId}/drivers/")
+    @GetMapping("/team/{teamId}/drivers/")
     public String getAllTeamDrivers(@PathVariable Long teamId,Model model) {
         {
             final List<DriverResponse> allTeamWithDrivers = teamUserService.getAllTeamDrivers(teamId);
@@ -33,7 +33,7 @@ public class TeamUserController {
         }
     }
 
-    @GetMapping("/teams")
+    @GetMapping("/team")
     public String getAllTeam(Model model) {
         List<TeamDto> teams = teamUserService.getAllTeam();
         model.addAttribute("teams",teams);
