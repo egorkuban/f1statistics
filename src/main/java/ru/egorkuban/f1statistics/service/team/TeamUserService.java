@@ -7,6 +7,7 @@ import ru.egorkuban.f1statistics.mapper.team.TeamMapper;
 import ru.egorkuban.f1statistics.model.Team;
 import ru.egorkuban.f1statistics.repository.TeamRepository;
 import ru.egorkuban.f1statistics.to.dto.team.TeamDto;
+import ru.egorkuban.f1statistics.to.dto.team.TeamWithoutDriversTo;
 import ru.egorkuban.f1statistics.to.response.DriverResponse;
 
 import java.util.List;
@@ -34,10 +35,10 @@ public class TeamUserService {
 
     }
 
-    public TeamDto getTeamById(Long teamId) {
+    public TeamWithoutDriversTo getTeamById(Long teamId) {
         Team team = teamRepository.findById(teamId)
                 .orElseThrow(() -> new IllegalArgumentException("Team with id= " + teamId + "NOT FOUND"));
-        return TeamMapper.INSTANCE.mapToTeamDto(team);
+        return TeamMapper.INSTANCE.mapToTeamWithoutDriversTo(team);
 
     }
 }

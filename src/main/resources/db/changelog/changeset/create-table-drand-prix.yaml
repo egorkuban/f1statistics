@@ -1,0 +1,80 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: "001"
+      author: egorkuban
+      changes:
+        - dropTable:
+            cascadeConstraints: true
+            catalogName: f1statistics@localhost
+            schemaName: public
+            tableName: grand_prix
+
+  - changeSet:
+      id: "002"
+      author: egorkuban
+      changes:
+        - createTable:
+            tableName: grand_prix
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: year
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_start
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_end
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: country
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: auto_drome
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: grand_prix_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: season_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: season_id
+                    references: season(id)
+                    deleteCascade: true
+              - column:
+                  name: prize_winner_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: prize_winner_id
+                    references: drivers(id)
+                    deleteCascade: true
+              - column:
+                  name: winner_team_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: winner_team_id
+                    references: team(id)
+                    deleteCascade: true
+
+
+
+

@@ -1,0 +1,87 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: "001"
+      author: egorkuban
+      changes:
+        - dropTable:
+            cascadeConstraints: true
+            catalogName: f1statistics@localhost
+            schemaName: public
+            tableName: team
+  - changeSet:
+      id: "002"
+      author: egorkuban
+      changes:
+        - createTable:
+            tableName: team
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    autoIncrement: true
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: country
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: team_chief
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: "003"
+      author: egorkuban
+      changes:
+        - addColumn:
+            tableName: team
+            columns:
+              - column:
+                  name: engine_manufacturer
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: "004"
+      author: egorkuban
+      changes:
+        - addColumn:
+            tableName: team
+            columns:
+             - column:
+                name: chassis
+                type: varchar(255)
+                constraints:
+                  nullable: false
+  - changeSet:
+      id: "005"
+      author: egorkuban
+      changes:
+        - addColumn:
+            tableName: team
+            columns:
+              - column:
+                  name: constructors_cups
+                  type: bigint
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: "006"
+      author: egorkuban
+      changes:
+        - addColumn:
+            tableName: team
+            columns:
+              - column:
+                  name: victories
+                  type: bigint
+                  constraints:
+                    nullable: false

@@ -39,9 +39,9 @@ public class TeamUserController {
         model.addAttribute("teams",teams);
         return "team-list";
     }
-    @GetMapping("/team/{teamId}/")
-    public ResponseEntity<TeamDto> getTeam(@PathVariable Long teamId) {
-        return  new ResponseEntity<>(teamUserService.getTeamById(teamId),HttpStatus.OK);
-
+    @GetMapping("/team/{teamId}/info")
+    public String getTeam(@PathVariable Long teamId, Model model) {
+        model.addAttribute("teamGetId",teamUserService.getTeamById(teamId));
+        return "team-info";
     }
 }

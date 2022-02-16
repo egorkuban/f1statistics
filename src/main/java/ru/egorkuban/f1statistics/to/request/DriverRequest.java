@@ -8,9 +8,8 @@ import lombok.Setter;
 public class DriverRequest {
     String firstName;
     String lastName;
-    int age;
-    String team;
-    int number;
     String country;
+    int age;
+    int number;
     int beginIn;
 }

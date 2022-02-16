@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8" />
+    <title>Create New Team</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<h1>Create New Team</h1>
+<form th:action="@{new/}" th:object="${teamRequest}" th:method="POST" >
+    <label for="name">Enter name :</label>
+    <input type="text" th:field="*{name}" id="name" />
+    <br>
+    <label for="country">Enter country :</label>
+    <input type="text" th:field="*{country}" id="country"/>
+    <br>
+    <label for="teamChief">Enter teamChief :</label>
+    <input type="text" th:field="*{teamChief}" id="teamChief"/>
+    <br>
+    <label for="engineManufacturer">Enter engineManufacturer :</label>
+    <input type="text" th:field="*{engineManufacturer}" id="engineManufacturer"/>
+    <br>
+    <label for="chassis">Enter chassis :</label>
+    <input type="text" th:field="*{chassis}" id="chassis"/>
+    <br>
+    <label for="constructorsCups">Enter constructorsCups :</label>
+    <input type="text" th:field="*{constructorsCups}" id="constructorsCups"/>
+    <br>
+    <label for="victories">Enter victories :</label>
+    <input type="text" th:field="*{victories}" id="victories"/>
+    <input type="submit" value="Create New Team">
+
+</form>
+</body>
+</html>

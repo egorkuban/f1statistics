@@ -1,3 +1,10 @@
-databaseChangeLog :
-  - include :
-      file : db/changelog/changeset/create-table.yaml
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/create-table-drand-prix.yaml
+  - include:
+      file: db/changelog/changeset/create-table-drivers.yaml
+  - include:
+      file: db/changelog/changeset/create-table-team.yaml
+  - include:
+      file: db/changelog/changeset/create-table-season.yaml
+

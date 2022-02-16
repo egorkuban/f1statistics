@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8" />
+    <title>TeamInfo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Team Info</h1>
+<h2></h2>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>ChiefName</th>
+            <th>Engine Manufacturer</th>
+            <th>Chassis</th>
+            <th>Constructors cups</th>
+            <th>Victories</th>
+
+        </tr>
+        <tr>
+            <td th:utext="${teamGetId.id}">...</td>
+            <td th:utext="${teamGetId.name}">...</td>
+            <td th:utext="${teamGetId.country}">...</td>
+            <td th:utext="${teamGetId.teamChief}">...</td>
+            <td th:utext="${teamGetId.engineManufacturer}">...</td>
+            <td th:utext="${teamGetId.chassis}">...</td>
+            <td th:utext="${teamGetId.constructorsCups}">...</td>
+            <td th:utext="${teamGetId.victories}">...</td>
+    </table>
+</div>
+</body>
+</html>

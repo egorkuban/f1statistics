@@ -7,6 +7,7 @@
 </head>
 <body>
 <h1>Teams</h1>
+<h2><a th:href="@{'admin/team/new'}">Add New Team</a></h2>
 <br/><br/>
 <div>
     <table border="1">
@@ -16,15 +17,20 @@
             <th>COUNTRY</th>
             <th>TEAM CHIEF</th>
             <th>DRIVERS</th>
+            <th>Add New Driver</th>
+            <th>Delete Team</th>
         </tr>
         <tr th:each ="team : ${teams}">
-            <td th:utext="${team.id}">...</td>
-            <td th:utext="${team.name}">...</td>
+            <td th:utext="${team.id}"></td>
+            <td> <a th:href="@{'team/' + ${team.id} + '/info'}" th:utext="${team.name}"></a></td>
             <td th:utext="${team.country}">...</td>
             <td th:utext="${team.teamChief}">...</td>
-            <td> <a th:href="@{'team/' + ${team.id} + '/drivers/'}" th:utext="${team.drivers}"></a>...</td>
+            <td> <a th:href="@{'team/' + ${team.id} + '/drivers/'}" th:utext="${team.drivers}"></a></td>
+            <td> <a th:href="@{'admin/team/'+ ${team.id} + '/drivers/new'}"> Add New Driver</a></td>
+            <td> <a th:href="@{'admin/team/'+ ${team.id}}"> Delete Team</a></td>
         </tr>
     </table>
+    <br>
 </div>
 </body>
 </html>

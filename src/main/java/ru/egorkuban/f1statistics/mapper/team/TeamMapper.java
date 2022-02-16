@@ -2,6 +2,7 @@ package ru.egorkuban.f1statistics.mapper.team;
 
 import ru.egorkuban.f1statistics.model.Team;
 import ru.egorkuban.f1statistics.to.dto.team.TeamDto;
+import ru.egorkuban.f1statistics.to.dto.team.TeamWithoutDriversTo;
 
 import java.util.stream.Collectors;
 
@@ -19,5 +20,17 @@ public class TeamMapper {
                             return driver.getFirstName() + " " + driver.getLastName();
                         })
                         .collect(Collectors.toList()));
+    }
+
+    public TeamWithoutDriversTo mapToTeamWithoutDriversTo(Team team) {
+        return new TeamWithoutDriversTo()
+                .setId(team.getId())
+                .setName(team.getName())
+                .setCountry(team.getCountry())
+                .setTeamChief(team.getTeamChief())
+                .setChassis(team.getChassis())
+                .setEngineManufacturer(team.getEngine_manufacturer())
+                .setConstructorsCups(team.getConstructorsCups())
+                .setVictories(team.getVictories());
     }
 }

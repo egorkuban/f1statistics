@@ -1,0 +1,172 @@
+databaseChangeLog:
+  - changeSet:
+      id: "001"
+      author: egorkuban
+      changes:
+        - dropTable:
+            cascadeConstraints: true
+            catalogName: f1statistics@localhost
+            schemaName: public
+            tableName: drivers
+  - changeSet:
+      id: "002"
+      author: egorkuban
+      changes:
+        - createTable:
+            tableName: drivers
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                   autoIncrement: true
+                   nullable: false
+                   primaryKey: true
+              - column:
+                  name: first_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: country
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: team_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: team_id
+                    references: team(id)
+                    deleteCascade: true
+              - column:
+                  name: number
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: begin_in
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_points
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_wins_in_season
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_poles
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: world_champion
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: winner
+                  type: boolean
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: "003"
+      author: egorkuban
+      changes:
+        - dropTable:
+            cascadeConstraints: true
+            catalogName: f1statistics@localhost
+            schemaName: public
+            tableName: drivers
+  - changeSet:
+      id: "004"
+      author: egorkuban
+      changes:
+        - createTable:
+            tableName: drivers
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    autoIncrement: true
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: first_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: age
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: country
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: team_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: team_id
+                    references: team(id)
+                    deleteCascade: true
+              - column:
+                  name: number
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: begin_in
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_points
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_wins_in_season
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_poles
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: world_champion
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: winner
+                  type: boolean
+                  constraints:
+                    nullable: false
+
+
+
+

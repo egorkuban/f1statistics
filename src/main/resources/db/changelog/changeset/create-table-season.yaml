@@ -1,0 +1,46 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: "001"
+      author: egorkuban
+      changes:
+        - dropTable:
+            cascadeConstraints: true
+            catalogName: f1statistics@localhost
+            schemaName: public
+            tableName: season
+  - changeSet:
+      id: "002"
+      author: egorkuban
+      changes:
+        - createTable:
+            tableName: season
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  autoIncrement: true
+              - column:
+                  name: year
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_start
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_end
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: count_grand_prix
+                  type: bigint
+                  constraints:
+                    nullable: false
+
+

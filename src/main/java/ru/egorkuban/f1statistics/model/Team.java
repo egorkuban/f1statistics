@@ -24,6 +24,14 @@ public class Team {
     private String country;
     @Column(name = "team_chief", nullable = false)
     private String teamChief;
+    @Column(name = "engine_manufacturer", nullable = false)
+    private String engine_manufacturer;
+    @Column(name = "chassis", nullable = false)
+    private String chassis;
+    @Column(name = "constructors_cups",nullable = false)
+    private int constructorsCups;
+    @Column(name = "victories", nullable = false)
+    private int victories;
 
     @OneToMany(mappedBy = "team")
     private List<Driver> drivers;

@@ -1,13 +1,14 @@
-package ru.egorkuban.f1statistics.to.request;
+package ru.egorkuban.f1statistics.to.dto.team;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 @Getter
 @Setter
-@NoArgsConstructor
-public class TeamRequest {
+@Accessors(chain = true)
+public class TeamWithoutDriversTo {
+    Long id;
     String name;
     String country;
     String teamChief;
