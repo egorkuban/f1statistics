@@ -2,7 +2,7 @@ package ru.egorkuban.f1statistics.mapper.team;
 
 import ru.egorkuban.f1statistics.model.Team;
 import ru.egorkuban.f1statistics.to.dto.team.TeamDto;
-import ru.egorkuban.f1statistics.to.dto.team.TeamWithoutDriversTo;
+import ru.egorkuban.f1statistics.to.dto.team.TeamWithoutDriversDto;
 
 import java.util.stream.Collectors;
 
@@ -22,8 +22,8 @@ public class TeamMapper {
                         .collect(Collectors.toList()));
     }
 
-    public TeamWithoutDriversTo mapToTeamWithoutDriversTo(Team team) {
-        return new TeamWithoutDriversTo()
+    public TeamWithoutDriversDto mapToTeamWithoutDriversTo(Team team) {
+        return new TeamWithoutDriversDto()
                 .setId(team.getId())
                 .setName(team.getName())
                 .setCountry(team.getCountry())

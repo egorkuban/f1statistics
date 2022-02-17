@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Drivers</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Drivers</h1>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>country</th>
+            <th>team</th>
+            <th>number</th>
+            <th>age</th>
+            <th>beginIn</th>
+            <th>totalPoles</th>
+            <th>totalWinsInSeason</th>
+            <th>totalPoints</th>
+            <th>winnerInSeason</th>
+            <th>worldChampions</th>
+            <th>Update</th>
+
+
+        </tr>
+        <tr th:each="pilot : ${drivers}" >
+            <td th:utext="${pilot.driver.firstName}">...</td>
+            <td th:utext="${pilot.driver.lastName}">...</td>
+            <td th:utext="${pilot.driver.country}">...</td>
+            <td th:utext="${pilot.driver.team}">...</td>
+            <td th:utext="${pilot.driver.number}">...</td>
+            <td th:utext="${pilot.driver.age}">...</td>
+            <td th:utext="${pilot.driver.beginIn}">...</td>
+            <td th:utext="${pilot.totalPoles}">...</td>
+            <td th:utext="${pilot.totalWinsInSeason}">...</td>
+            <td th:utext="${pilot.totalPoints}">...</td>
+            <td th:utext="${pilot.winnerInSeason}">...</td>
+            <td th:utext="${pilot.worldChampions}">...</td>
+            <td><a th:href="@{'admin/drivers/' + ${pilot.driver.id} + '/'}"> Update Driver</a></td>
+    </table>
+</div>
+</body>
+</html>

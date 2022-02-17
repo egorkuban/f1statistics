@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8" />
+    <title>Update New Driver</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}"  />
+</head>
+<body>
+<h1>Update Driver</h1>
+<br>
+<form th:action="@{update-driver/}" th:object="${driverInfo}" th:method="POST">
+    <label for="totalPoints">Enter totalPoints :</label>
+    <input type="text" th:field="*{totalPoints}" id="totalPoints"/>
+    <br>
+    <label for="totalWinsInSeason">Enter totalWinsInSeason :</label>
+    <input type="text" th:field="*{totalWinsInSeason}" id="totalWinsInSeason"/>
+    <br>
+    <label for="totalPoles">Enter totalPoles :</label>
+    <input type="text" th:field="*{totalPoles}" id="totalPoles"/>
+    <br>
+<!--    <label for="worldChampions">Enter worldChampions :</label>-->
+<!--    <input type="" th:b="*{isWorldChampions()}" id="worldChampions"/>-->
+<!--    <br>-->
+<!--    <label for="isWinnerInSeason">Enter isWinnerInSeason :</label>-->
+<!--    <input type="text" th:field="*{isWinnerInSeason()}" id="isWinnerInSeason"/>-->
+    <br>
+    <input type="submit" value="Update Driver">
+
+</form>
+</body>
+</html>

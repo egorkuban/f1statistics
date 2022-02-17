@@ -19,6 +19,7 @@
             <th>number</th>
             <th>beginIn</th>
             <th>team</th>
+            <th>Update</th>
 
         </tr>
         <tr th:each ="driver : ${drivers}">
@@ -30,7 +31,6 @@
             <td th:utext="${driver.number}">...</td>
             <td th:utext="${driver.beginIn}">...</td>
             <td th:utext="${driver.team}">...</td>
-
     </table>
 </div>
 </body>

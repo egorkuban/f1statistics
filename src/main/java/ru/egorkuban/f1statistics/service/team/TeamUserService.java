@@ -2,13 +2,13 @@ package ru.egorkuban.f1statistics.service.team;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.egorkuban.f1statistics.mapper.DriverMapper;
+import ru.egorkuban.f1statistics.mapper.driver.DriverMapper;
 import ru.egorkuban.f1statistics.mapper.team.TeamMapper;
 import ru.egorkuban.f1statistics.model.Team;
 import ru.egorkuban.f1statistics.repository.TeamRepository;
+import ru.egorkuban.f1statistics.to.dto.driver.DriverTo;
 import ru.egorkuban.f1statistics.to.dto.team.TeamDto;
-import ru.egorkuban.f1statistics.to.dto.team.TeamWithoutDriversTo;
-import ru.egorkuban.f1statistics.to.response.DriverResponse;
+import ru.egorkuban.f1statistics.to.dto.team.TeamWithoutDriversDto;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,7 +19,7 @@ public class TeamUserService {
 
     private final TeamRepository teamRepository;
 
-    public List<DriverResponse> getAllTeamDrivers(Long teamId) {
+    public List<DriverTo> getAllTeamDrivers(Long teamId) {
 
         return teamRepository.findByIdTeam(teamId)
                 .orElseThrow(() -> new IllegalArgumentException("Team with id= " + teamId + "NOT FOUND"))
@@ -35,7 +35,7 @@ public class TeamUserService {
 
     }
 
-    public TeamWithoutDriversTo getTeamById(Long teamId) {
+    public TeamWithoutDriversDto getTeamById(Long teamId) {
         Team team = teamRepository.findById(teamId)
                 .orElseThrow(() -> new IllegalArgumentException("Team with id= " + teamId + "NOT FOUND"));
         return TeamMapper.INSTANCE.mapToTeamWithoutDriversTo(team);

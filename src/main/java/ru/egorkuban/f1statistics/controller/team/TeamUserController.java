@@ -1,18 +1,14 @@
 package ru.egorkuban.f1statistics.controller.team;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import ru.egorkuban.f1statistics.service.team.TeamUserService;
+import ru.egorkuban.f1statistics.to.dto.driver.DriverTo;
 import ru.egorkuban.f1statistics.to.dto.team.TeamDto;
-import ru.egorkuban.f1statistics.to.response.DriverResponse;
 
 import java.util.List;
 
@@ -22,10 +18,10 @@ import java.util.List;
 public class TeamUserController {
     private final TeamUserService teamUserService;
 
-    @GetMapping("/team/{teamId}/drivers/")
+    @GetMapping("/team/{teamId}/drivers")
     public String getAllTeamDrivers(@PathVariable Long teamId,Model model) {
         {
-            final List<DriverResponse> allTeamWithDrivers = teamUserService.getAllTeamDrivers(teamId);
+            final List<DriverTo> allTeamWithDrivers = teamUserService.getAllTeamDrivers(teamId);
             model.addAttribute("drivers",allTeamWithDrivers);
 
             return "players-info";

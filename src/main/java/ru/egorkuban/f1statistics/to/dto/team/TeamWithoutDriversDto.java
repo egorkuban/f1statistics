@@ -7,7 +7,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class TeamWithoutDriversTo {
+public class TeamWithoutDriversDto {
     Long id;
     String name;
     String country;

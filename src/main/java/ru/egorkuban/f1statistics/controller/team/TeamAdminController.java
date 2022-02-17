@@ -1,7 +1,6 @@
 package ru.egorkuban.f1statistics.controller.team;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -45,10 +44,10 @@ public class TeamAdminController {
     }
 
 
-    @PostMapping("team/{teamId}/")
-    public ResponseEntity<TeamResponse> updateTeam(RequestBody TeamRequest, @PathVariable Long teamId) {
-        return null;
-    }
+//    @PostMapping("team/{teamId}/")
+//    public ResponseEntity<TeamResponse> updateTeam(RequestBody TeamRequest, @PathVariable Long teamId) {
+//        return null;
+//    }
 
     @GetMapping("team/{teamId}")
     String deleteDriverTeam(@PathVariable Long teamId) {
